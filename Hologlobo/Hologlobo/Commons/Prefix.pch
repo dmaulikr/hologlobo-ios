@@ -1,0 +1,23 @@
+//
+//  Created by Fabio.
+//  Copyright (c) 2015 Bluenose. All rights reserved.
+//
+
+#ifndef _Prefix_pch
+#define _Prefix_pch
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
+#endif
+
+#if DEBUG == 1
+#define DLog(...) NSLog(__VA_ARGS__)
+#else
+#define DLog(...)
+#endif
+
+#define VERSION() [[[UIDevice currentDevice] systemVersion] floatValue]
+
+#endif

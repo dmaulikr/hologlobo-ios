@@ -12,42 +12,71 @@
 #import "BNNetworkManager.h"
 #import "BNGenericRequest.h"
 
-#import "ViewController.h"
-
 #import "General.h"
+
+#import "ListCard.h"
+
+@interface ListViewController ()
+@property (retain, nonatomic) IBOutlet BNCardListView * cardList;
+@end
 
 @implementation ListViewController
 
 - (void)viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
+    [self setNeedsStatusBarAppearanceUpdate];
     
-    [self.navigationController pushViewController:[ViewController viewControllerWithFile:@"eu2.obj"] animated:YES];
-//    [self reload];
+//    [self.navigationController pushViewController:[ViewController viewControllerWithFile:@"eu2.obj"] animated:YES];
+    [self reload];
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    
+    return UIStatusBarStyleDefault;
+}
 
+- (IBAction)reloadAction:(id)sender {
+    
+    [self.cardList setCards:@[]];
+    [self reload];
+}
 
 - (void)reload {
     
-//    [BNNetworkManager cancelRequestsWithTag:@"list"];
-//    [BNNetworkManager addRequest:[BNGenericRequest genericRequestWithTag:@"list" urlRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://hologlobo.mybluemix.net/api/holograms"]] successHandler:^(BNGenericRequest *request, NSData *data, NSDictionary *responseHeader) {
-//        
-//        NSError * error = nil;
-//        id jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
-//        
-//        if(error != nil) {
-//            
-//            [self fail];
-//            return;
-//        }
-//        
-//        DLog(@"result: %@", jsonData);
-//        
-//    } failHandler:^(BNGenericRequest *request, NSDictionary *responseHeader) {
-//        
-//        [self fail];
-//    }]];
+    [BNNetworkManager cancelRequestsWithTag:@"list"];
+    [BNNetworkManager addRequest:[BNGenericRequest genericRequestWithTag:@"list" urlRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[BASE_URL stringByAppendingPathComponent:LIST_URL]]] successHandler:^(BNGenericRequest *request, NSData *data, NSDictionary *responseHeader) {
+        
+        NSError * error = nil;
+        id jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+        
+        if(error != nil || ![jsonData isKindOfClass:[NSArray class]]) {
+            
+            [self fail];
+            return;
+        }
+        
+        DLog(@"result: %@", jsonData);
+        
+        NSMutableArray * cards = [NSMutableArray array];
+        
+        for(NSDictionary * entry in jsonData) {
+            
+            if(![entry isKindOfClass:[NSDictionary class]]) {
+                
+                [self fail];
+                return;
+            }
+            
+            [cards addObject:[ListCard cardWithData:entry]];
+        }
+        
+        [self.cardList setCards:cards];
+        
+    } failHandler:^(BNGenericRequest *request, NSDictionary *responseHeader) {
+        
+        [self fail];
+    }]];
 }
 
 - (void)fail {
@@ -55,13 +84,10 @@
     ERROR_ALERT(@"Não foi possível listar as cenas.");
 }
 
-- (void)save {
-    
-}
-
 - (void)dealloc {
 
     [BNNetworkManager cancelRequestsWithTag:@"list"];
+    [_cardList release];
     [super dealloc];
 }
 

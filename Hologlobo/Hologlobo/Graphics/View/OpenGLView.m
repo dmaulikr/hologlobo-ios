@@ -136,7 +136,6 @@
 - (void)unload {
  
     [EAGLContext setCurrentContext:_context];
-    [[GLTextureCacher shared] unloadTextures];
     
     glMathRelease(_mathContext);
     [_program unload];

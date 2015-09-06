@@ -7,39 +7,8 @@
 
 @implementation GLTextureCacher
 
-+ (id)shared {
++ (GLuint)setupTextureWithImage:(UIImage *)image {
     
-    static GLTextureCacher * shared = nil;
-    static dispatch_once_t onceToken;
-    
-    dispatch_once(&onceToken, ^{
-        shared = [[self alloc] init];
-    });
-    
-    return shared;
-}
-
-- (GLuint)loadTexture:(NSString *)img {
-    
-    if(!_loadedTextures) {
-        
-        _loadedTextures = [[NSMutableDictionary alloc] init];
-    }
-    
-    NSNumber * textureId = [_loadedTextures objectForKey:img];
-    
-    if(textureId == nil) {
-        
-        textureId = [NSNumber numberWithUnsignedInt:[GLTextureCacher setupTexture:img]];
-        [_loadedTextures setObject:textureId forKey:img];
-    }
-    
-    return (GLuint)[textureId unsignedIntValue];
-}
-
-+ (GLuint)setupTexture:(NSString *)img {
-    
-    UIImage * image = [UIImage imageNamed:img];
     CGImageRef spriteImage = [image CGImage];
     
     size_t width = CGImageGetWidth(spriteImage);
@@ -82,26 +51,6 @@
     free(spriteData);
     
     return texName;
-}
-
-- (void)unloadTextures {
-    
-    for(NSString * key in [_loadedTextures allKeys]) {
-        
-        NSNumber * textureID = [_loadedTextures objectForKey:key];
-        GLuint texture = [textureID unsignedIntValue];
-        
-        if(texture != 0)
-            glDeleteTextures(1, &texture);
-    }
-    
-    [_loadedTextures release], _loadedTextures = nil;
-}
-
-- (void)dealloc {
-    
-    [self unloadTextures];
-    [super dealloc];
 }
 
 @end

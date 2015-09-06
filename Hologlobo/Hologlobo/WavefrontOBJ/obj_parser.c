@@ -197,7 +197,8 @@ int obj_parse_mtl_file(char *filename, list *material_list)
 	FILE *mtl_file_stream;
 	
 	// open scene
-	mtl_file_stream = fopenInBundle(filename, "r");
+//	mtl_file_stream = fopenInBundle(filename, "r");
+    mtl_file_stream = fopenInDocumentsDirectory(filename, "r");
 	if(mtl_file_stream == 0)
 	{
 		fprintf(stderr, "Error reading file: %s\n", filename);
@@ -281,7 +282,7 @@ int obj_parse_mtl_file(char *filename, list *material_list)
 		{
 		}
 		// texture map
-		else if( strequal(current_token, "map_Ka") && material_open)
+		else if((strequal(current_token, "map_Ka") && material_open) || (strequal(current_token, "map_Kd") && material_open))
 		{
 			strncpy(current_mtl->texture_filename, strtok(NULL, " \t"), OBJ_FILENAME_LENGTH);
 		}
@@ -307,7 +308,9 @@ int obj_parse_obj_file(obj_growable_scene_data *growable_data, char *filename)
 	char current_line[OBJ_LINE_SIZE];
 	int line_number = 0;
 	// open scene
-	obj_file_stream = fopenInBundle( filename, "r");
+//	obj_file_stream = fopenInBundle( filename, "r");
+    obj_file_stream = fopenInDocumentsDirectory(filename, "r");
+    
 	if(obj_file_stream == 0)
 	{
 		fprintf(stderr, "Error reading file: %s\n", filename);

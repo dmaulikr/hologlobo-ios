@@ -28,17 +28,6 @@
 		EFB986121B9B61AD0077E812 /* obj_parser.c in Sources */ = {isa = PBXBuildFile; fileRef = EFB9860D1B9B61AD0077E812 /* obj_parser.c */; };
 		EFB986131B9B61AD0077E812 /* string_extra.c in Sources */ = {isa = PBXBuildFile; fileRef = EFB9860F1B9B61AD0077E812 /* string_extra.c */; };
 		EFB986181B9B62950077E812 /* ProjectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB986171B9B62950077E812 /* ProjectionView.m */; };
-		EFB986261B9B64270077E812 /* discovery.mtl in Resources */ = {isa = PBXBuildFile; fileRef = EFB9861B1B9B64270077E812 /* discovery.mtl */; };
-		EFB986271B9B64270077E812 /* discovery.obj in Resources */ = {isa = PBXBuildFile; fileRef = EFB9861C1B9B64270077E812 /* discovery.obj */; };
-		EFB986281B9B64270077E812 /* portaDireita.mtl in Resources */ = {isa = PBXBuildFile; fileRef = EFB9861D1B9B64270077E812 /* portaDireita.mtl */; };
-		EFB986291B9B64270077E812 /* portaDireita.obj in Resources */ = {isa = PBXBuildFile; fileRef = EFB9861E1B9B64270077E812 /* portaDireita.obj */; };
-		EFB9862A1B9B64270077E812 /* portaEsquerda.mtl in Resources */ = {isa = PBXBuildFile; fileRef = EFB9861F1B9B64270077E812 /* portaEsquerda.mtl */; };
-		EFB9862B1B9B64270077E812 /* portaEsquerda.obj in Resources */ = {isa = PBXBuildFile; fileRef = EFB986201B9B64270077E812 /* portaEsquerda.obj */; };
-		EFB9862C1B9B64270077E812 /* spstob_1.bmp in Resources */ = {isa = PBXBuildFile; fileRef = EFB986211B9B64270077E812 /* spstob_1.bmp */; };
-		EFB9862D1B9B64270077E812 /* spstob_2.bmp in Resources */ = {isa = PBXBuildFile; fileRef = EFB986221B9B64270077E812 /* spstob_2.bmp */; };
-		EFB9862E1B9B64270077E812 /* spstob_3.bmp in Resources */ = {isa = PBXBuildFile; fileRef = EFB986231B9B64270077E812 /* spstob_3.bmp */; };
-		EFB9862F1B9B64270077E812 /* spstob_4.bmp in Resources */ = {isa = PBXBuildFile; fileRef = EFB986241B9B64270077E812 /* spstob_4.bmp */; };
-		EFB986301B9B64270077E812 /* spstob_e.bmp in Resources */ = {isa = PBXBuildFile; fileRef = EFB986251B9B64270077E812 /* spstob_e.bmp */; };
 		EFB9868D1B9B8FB50077E812 /* NSArray+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB986361B9B8FB50077E812 /* NSArray+Safe.m */; };
 		EFB9868E1B9B8FB50077E812 /* NSDictionary+Path.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB986381B9B8FB50077E812 /* NSDictionary+Path.m */; };
 		EFB9868F1B9B8FB50077E812 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB9863A1B9B8FB50077E812 /* UIColor+Hex.m */; };
@@ -74,11 +63,8 @@
 		EFB986B91B9B8FB50077E812 /* BNTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB9868A1B9B8FB50077E812 /* BNTextCell.m */; };
 		EFB986BA1B9B8FB50077E812 /* BNTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFB9868B1B9B8FB50077E812 /* BNTextCell.xib */; };
 		EFB986BB1B9B91AB0077E812 /* Vectors.c in Sources */ = {isa = PBXBuildFile; fileRef = EFB985F81B9B61420077E812 /* Vectors.c */; };
-		EFB986C71B9B96520077E812 /* eu2.mtl in Resources */ = {isa = PBXBuildFile; fileRef = EFB986C41B9B96520077E812 /* eu2.mtl */; };
-		EFB986C91B9B96520077E812 /* eu2.bmp in Resources */ = {isa = PBXBuildFile; fileRef = EFB986C61B9B96520077E812 /* eu2.bmp */; };
 		EFB986CD1B9BAE380077E812 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB986CC1B9BAE380077E812 /* ListViewController.m */; };
-		EFB986CF1B9BBBE60077E812 /* eu2.obj in Resources */ = {isa = PBXBuildFile; fileRef = EFB986CE1B9BBBE60077E812 /* eu2.obj */; };
-		EFB986D11B9BBC600077E812 /* eu2.obj.mtl in Resources */ = {isa = PBXBuildFile; fileRef = EFB986D01B9BBC600077E812 /* eu2.obj.mtl */; };
+		EFB986D51B9BC0720077E812 /* ListCard.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB986D41B9BC0720077E812 /* ListCard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,17 +119,6 @@
 		EFB986101B9B61AD0077E812 /* string_extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = string_extra.h; sourceTree = "<group>"; };
 		EFB986161B9B62950077E812 /* ProjectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectionView.h; sourceTree = "<group>"; };
 		EFB986171B9B62950077E812 /* ProjectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectionView.m; sourceTree = "<group>"; };
-		EFB9861B1B9B64270077E812 /* discovery.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = discovery.mtl; sourceTree = "<group>"; };
-		EFB9861C1B9B64270077E812 /* discovery.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = discovery.obj; sourceTree = "<group>"; };
-		EFB9861D1B9B64270077E812 /* portaDireita.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = portaDireita.mtl; sourceTree = "<group>"; };
-		EFB9861E1B9B64270077E812 /* portaDireita.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = portaDireita.obj; sourceTree = "<group>"; };
-		EFB9861F1B9B64270077E812 /* portaEsquerda.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = portaEsquerda.mtl; sourceTree = "<group>"; };
-		EFB986201B9B64270077E812 /* portaEsquerda.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = portaEsquerda.obj; sourceTree = "<group>"; };
-		EFB986211B9B64270077E812 /* spstob_1.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = spstob_1.bmp; sourceTree = "<group>"; };
-		EFB986221B9B64270077E812 /* spstob_2.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = spstob_2.bmp; sourceTree = "<group>"; };
-		EFB986231B9B64270077E812 /* spstob_3.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = spstob_3.bmp; sourceTree = "<group>"; };
-		EFB986241B9B64270077E812 /* spstob_4.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = spstob_4.bmp; sourceTree = "<group>"; };
-		EFB986251B9B64270077E812 /* spstob_e.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = spstob_e.bmp; sourceTree = "<group>"; };
 		EFB986351B9B8FB50077E812 /* NSArray+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Safe.h"; sourceTree = "<group>"; };
 		EFB986361B9B8FB50077E812 /* NSArray+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Safe.m"; sourceTree = "<group>"; };
 		EFB986371B9B8FB50077E812 /* NSDictionary+Path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Path.h"; sourceTree = "<group>"; };
@@ -209,12 +184,10 @@
 		EFB986891B9B8FB50077E812 /* BNTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNTextCell.h; sourceTree = "<group>"; };
 		EFB9868A1B9B8FB50077E812 /* BNTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNTextCell.m; sourceTree = "<group>"; };
 		EFB9868B1B9B8FB50077E812 /* BNTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNTextCell.xib; sourceTree = "<group>"; };
-		EFB986C41B9B96520077E812 /* eu2.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eu2.mtl; sourceTree = "<group>"; };
-		EFB986C61B9B96520077E812 /* eu2.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = eu2.bmp; sourceTree = "<group>"; };
 		EFB986CB1B9BAE380077E812 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		EFB986CC1B9BAE380077E812 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
-		EFB986CE1B9BBBE60077E812 /* eu2.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eu2.obj; sourceTree = "<group>"; };
-		EFB986D01B9BBC600077E812 /* eu2.obj.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eu2.obj.mtl; sourceTree = "<group>"; };
+		EFB986D31B9BC0720077E812 /* ListCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListCard.h; sourceTree = "<group>"; };
+		EFB986D41B9BC0720077E812 /* ListCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListCard.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +229,7 @@
 		EF29EA3C1B9B45B100F855AD /* Hologlobo */ = {
 			isa = PBXGroup;
 			children = (
+				EFB986D21B9BC0540077E812 /* Cards */,
 				EFB986311B9B8FB50077E812 /* Commons */,
 				EFB986151B9B62520077E812 /* 3D */,
 				EF29EA411B9B45B100F855AD /* AppDelegate.h */,
@@ -391,7 +365,6 @@
 		EFB986151B9B62520077E812 /* 3D */ = {
 			isa = PBXGroup;
 			children = (
-				EFB986191B9B63FD0077E812 /* Models */,
 				EFB9860A1B9B61AD0077E812 /* WavefrontOBJ */,
 				EFB985DF1B9B61420077E812 /* Extra */,
 				EFB985E21B9B61420077E812 /* Graphics */,
@@ -401,33 +374,6 @@
 				EFB986171B9B62950077E812 /* ProjectionView.m */,
 			);
 			name = 3D;
-			sourceTree = "<group>";
-		};
-		EFB986191B9B63FD0077E812 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				EFB986C31B9B962B0077E812 /* Giovanni */,
-				EFB9861A1B9B64270077E812 /* Discovery */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		EFB9861A1B9B64270077E812 /* Discovery */ = {
-			isa = PBXGroup;
-			children = (
-				EFB9861B1B9B64270077E812 /* discovery.mtl */,
-				EFB9861C1B9B64270077E812 /* discovery.obj */,
-				EFB9861D1B9B64270077E812 /* portaDireita.mtl */,
-				EFB9861E1B9B64270077E812 /* portaDireita.obj */,
-				EFB9861F1B9B64270077E812 /* portaEsquerda.mtl */,
-				EFB986201B9B64270077E812 /* portaEsquerda.obj */,
-				EFB986211B9B64270077E812 /* spstob_1.bmp */,
-				EFB986221B9B64270077E812 /* spstob_2.bmp */,
-				EFB986231B9B64270077E812 /* spstob_3.bmp */,
-				EFB986241B9B64270077E812 /* spstob_4.bmp */,
-				EFB986251B9B64270077E812 /* spstob_e.bmp */,
-			);
-			path = Discovery;
 			sourceTree = "<group>";
 		};
 		EFB986311B9B8FB50077E812 /* Commons */ = {
@@ -558,17 +504,6 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		EFB986C31B9B962B0077E812 /* Giovanni */ = {
-			isa = PBXGroup;
-			children = (
-				EFB986C41B9B96520077E812 /* eu2.mtl */,
-				EFB986CE1B9BBBE60077E812 /* eu2.obj */,
-				EFB986D01B9BBC600077E812 /* eu2.obj.mtl */,
-				EFB986C61B9B96520077E812 /* eu2.bmp */,
-			);
-			path = Giovanni;
-			sourceTree = "<group>";
-		};
 		EFB986CA1B9BACBB0077E812 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -578,6 +513,15 @@
 				EFB986CC1B9BAE380077E812 /* ListViewController.m */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		EFB986D21B9BC0540077E812 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				EFB986D31B9BC0720077E812 /* ListCard.h */,
+				EFB986D41B9BC0720077E812 /* ListCard.m */,
+			);
+			path = Cards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -661,33 +605,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFB9862D1B9B64270077E812 /* spstob_2.bmp in Resources */,
 				EF29EA491B9B45B100F855AD /* Main.storyboard in Resources */,
 				EFB986041B9B61420077E812 /* SimpleFragment.glsl in Resources */,
 				EFB986B61B9B8FB50077E812 /* BNSeparatorCell.xib in Resources */,
 				EFB986051B9B61420077E812 /* SimpleVertex.glsl in Resources */,
-				EFB986281B9B64270077E812 /* portaDireita.mtl in Resources */,
-				EFB986C71B9B96520077E812 /* eu2.mtl in Resources */,
-				EFB9862C1B9B64270077E812 /* spstob_1.bmp in Resources */,
-				EFB986CF1B9BBBE60077E812 /* eu2.obj in Resources */,
 				EFB986BA1B9B8FB50077E812 /* BNTextCell.xib in Resources */,
-				EFB986271B9B64270077E812 /* discovery.obj in Resources */,
-				EFB9862F1B9B64270077E812 /* spstob_4.bmp in Resources */,
-				EFB986301B9B64270077E812 /* spstob_e.bmp in Resources */,
 				EFB986AE1B9B8FB50077E812 /* BNDetailTextCell.xib in Resources */,
 				EFB986B21B9B8FB50077E812 /* BNEmptySpaceCell.xib in Resources */,
 				EFB986B41B9B8FB50077E812 /* BNImageCell.xib in Resources */,
-				EFB986291B9B64270077E812 /* portaDireita.obj in Resources */,
-				EFB9862E1B9B64270077E812 /* spstob_3.bmp in Resources */,
-				EFB9862A1B9B64270077E812 /* portaEsquerda.mtl in Resources */,
 				EF29EA4E1B9B45B100F855AD /* LaunchScreen.xib in Resources */,
 				EFB986B81B9B8FB50077E812 /* BNStaticImageCell.xib in Resources */,
-				EFB986261B9B64270077E812 /* discovery.mtl in Resources */,
-				EFB986C91B9B96520077E812 /* eu2.bmp in Resources */,
 				EF29EA4B1B9B45B100F855AD /* Images.xcassets in Resources */,
-				EFB9862B1B9B64270077E812 /* portaEsquerda.obj in Resources */,
 				EFB986B01B9B8FB50077E812 /* BNEmptyCell.xib in Resources */,
-				EFB986D11B9BBC600077E812 /* eu2.obj.mtl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,6 +647,7 @@
 				EFB986A21B9B8FB50077E812 /* NSAttributedString+bbCode.m in Sources */,
 				EFB986A11B9B8FB50077E812 /* BBCodeParser.m in Sources */,
 				EFB985FF1B9B61420077E812 /* glMath.c in Sources */,
+				EFB986D51B9BC0720077E812 /* ListCard.m in Sources */,
 				EFB986A51B9B8FB50077E812 /* BNCardListView.m in Sources */,
 				EFB986121B9B61AD0077E812 /* obj_parser.c in Sources */,
 				EFB986181B9B62950077E812 /* ProjectionView.m in Sources */,

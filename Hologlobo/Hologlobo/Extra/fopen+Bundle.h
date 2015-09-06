@@ -10,4 +10,14 @@
 
 FILE * fopenInBundle(char * file, char * mode);
 
+#ifdef __OBJC__
+BOOL documentsDirectoryExists(NSString * directory);
+NSString * documentsPathForDirectory(NSString * directory);
+
+NSString * getDocumentsDirectory(void);
+void setDocumentsDirectory(NSString * directory);
+#endif
+
+FILE * fopenInDocumentsDirectory(char * file, char * mode);
+
 #endif

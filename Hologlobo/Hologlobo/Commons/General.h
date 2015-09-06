@@ -24,4 +24,8 @@
 #define ERROR_ALERT(X) ALERT(@"Erro", X)
 #define DEFAULT_ERROR_ALERT() ERROR_ALERT(@"Por favor, tente novamente")
 
+/* Service */
+#define BASE_URL @"http://hologlobo.mybluemix.net/api"
+#define LIST_URL @"holograms"
+
 #endif

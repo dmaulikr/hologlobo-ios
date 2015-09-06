@@ -12,11 +12,7 @@
 
 @property (retain, nonatomic) NSMutableDictionary * loadedTextures;
 
-+ (id)shared;
-- (GLuint)loadTexture:(NSString *)img;
-- (void)unloadTextures;
-
-+ (GLuint)setupTexture:(NSString *)img;
++ (GLuint)setupTextureWithImage:(UIImage *)image;
 
 @end
 

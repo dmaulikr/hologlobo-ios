@@ -6,6 +6,8 @@
 #import "GLWavefrontModel.h"
 #include "obj_parser.h"
 
+#import "fopen+Bundle.h"
+
 @implementation GLWavefrontFace
 
 - (BOOL)hasTexture {
@@ -71,8 +73,14 @@
                         
                         NSString * textureFile = [[NSString stringWithUTF8String:data.material_list[index]->texture_filename] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
                         
-//                        textureID = [[GLTextureCacher shared] loadTexture:textureFile];
-                        textureID = [GLTextureCacher setupTexture:textureFile];
+                        NSString * documents = getDocumentsDirectory();
+                        
+                        if(![documents isEqualToString:@""]) {
+                            
+                            textureFile = [documents stringByAppendingPathComponent:textureFile];
+                        }
+                        
+                        textureID = [GLTextureCacher setupTextureWithImage:[UIImage imageWithContentsOfFile:textureFile]];
                     }
                     
                     GLWavefrontFace * object = [[GLWavefrontFace alloc] init];
@@ -196,7 +204,15 @@
             if(texture) {
                 
 //                _globalTexture = [[GLTextureCacher shared] loadTexture:texture];
-                _globalTexture = [GLTextureCacher setupTexture:texture];
+                
+                NSString * documents = getDocumentsDirectory();
+                
+                if(![documents isEqualToString:@""]) {
+                    
+                    texture = [documents stringByAppendingPathComponent:texture];
+                }
+                
+                _globalTexture = [GLTextureCacher setupTextureWithImage:[UIImage imageWithContentsOfFile:texture]];
             }
         }
         

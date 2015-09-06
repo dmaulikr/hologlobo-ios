@@ -22,18 +22,16 @@
 
 @implementation ListViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
-    [self setNeedsStatusBarAppearanceUpdate];
-    
-//    [self.navigationController pushViewController:[ViewController viewControllerWithFile:@"eu2.obj"] animated:YES];
     [self reload];
-}
-
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    
-    return UIStatusBarStyleDefault;
 }
 
 - (IBAction)reloadAction:(id)sender {

@@ -63,15 +63,6 @@
     [self prepareForRendering];
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-    
-    [super viewWillDisappear:animated];
-    [self.projectionView unload];
-    [self.rightView unload];
-    [self.bottomView unload];
-    [self.leftView unload];
-}
-
 - (void)prepareForRendering {
     
     [self.projectionView prepareForRenderingWithFile:self.file rotation:0.f];
@@ -135,6 +126,11 @@
             _expanded = YES;
         }];
     }
+}
+
+- (IBAction)backAction:(id)sender {
+
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)dealloc {

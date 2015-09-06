@@ -21,4 +21,6 @@
     GLSLProgram * _program;
 }
 
+- (EAGLContext *)context;
+
 @end

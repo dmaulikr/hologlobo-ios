@@ -90,10 +90,10 @@
 
 - (void)unload {
     
+    [EAGLContext setCurrentContext:self.context];
     [_obj release], _obj = nil;
     [_model release], _model = nil;
     [super unload];
 }
-
 
 @end

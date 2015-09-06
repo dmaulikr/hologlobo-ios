@@ -133,6 +133,10 @@
     glFlush();
 }
 
+- (EAGLContext *)context {
+    return _context;
+}
+
 - (void)unload {
  
     [EAGLContext setCurrentContext:_context];

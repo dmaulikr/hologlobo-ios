@@ -12,6 +12,7 @@
 
 - (void)setDistance:(CGFloat)distance;
 - (void)setRotation:(CGFloat)degrees;
+- (void)setControlRotation:(BOOL)controlRotation;
 
 - (void)prepareForRenderingWithFile:(NSString *)file rotation:(CGFloat)degrees;
 

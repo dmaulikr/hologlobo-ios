@@ -10,10 +10,14 @@
 
 @implementation ProjectionView {
     GLVertexBufferObject * _obj;
-    GLWavefrontModel * _model, * _leftDoor, * _rightDoor;
+    GLWavefrontModel * _model;
     CGFloat _degrees;
     CGFloat _rotation;
+    
+    CGFloat _autoRotation;
     CGFloat _distance;
+    
+    BOOL _controlRotation;
 }
 
 - (void)prepareForRenderingWithFile:(NSString *)file rotation:(CGFloat)degrees {
@@ -54,6 +58,10 @@
     _rotation = degrees;
 }
 
+- (void)setControlRotation:(BOOL)controlRotation {
+    _controlRotation = controlRotation;
+}
+
 - (void)renderFrameWithInterval:(double)interval  {
     
     [super renderFrameWithInterval:interval];
@@ -73,7 +81,15 @@
     mglRotatef(_mathContext, _degrees, 0.f, 0.f, 1.f);
     
     mglTranslatef(_mathContext, 0.f, 0.f, -_distance);
-    mglRotatef(_mathContext, _degrees + _rotation, 0.f, 1.f, 0.f);
+    
+    _autoRotation += interval * 90.f;
+    
+    if(_autoRotation > 360.f)
+        _autoRotation -= 360.f;
+    
+    CGFloat rotation = _controlRotation ? _rotation:_autoRotation;
+    
+    mglRotatef(_mathContext, _degrees + rotation, 0.f, 1.f, 0.f);
     
     mglScalef(_mathContext, 10.f/_model.magnitude, 10.f/_model.magnitude, 10.f/_model.magnitude);
     mglTranslatef(_mathContext, -(_model.centroid.v[0]), -(_model.centroid.v[1]), -(_model.centroid.v[2]));

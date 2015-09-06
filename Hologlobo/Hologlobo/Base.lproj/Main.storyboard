@@ -118,6 +118,9 @@
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="359" id="qjk-Fg-Vgr">
                                                 <rect key="frame" x="6" y="8" width="288" height="31"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <action selector="rotationChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="hn2-H2-JXV"/>
+                                                </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="1" maxValue="100" id="9jx-VI-vtA">
                                                 <rect key="frame" x="6" y="46" width="288" height="31"/>

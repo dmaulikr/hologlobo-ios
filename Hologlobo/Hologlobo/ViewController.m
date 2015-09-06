@@ -48,6 +48,16 @@
     [self.navigationController setNavigationBarHidden:YES];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    
+    [super viewWillDisappear:animated];
+    
+    [_projectionView release], _projectionView = nil;
+    [_rightView release], _rightView = nil;
+    [_bottomView release], _bottomView = nil;
+    [_leftView release], _leftView = nil;
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
@@ -61,6 +71,14 @@
     }
     
     [self prepareForRendering];
+}
+
+- (IBAction)rotationChanged:(id)sender {
+
+    [self.projectionView setControlRotation:YES];
+    [self.rightView setControlRotation:YES];
+    [self.bottomView setControlRotation:YES];
+    [self.leftView setControlRotation:YES];
 }
 
 - (void)prepareForRendering {
@@ -79,7 +97,7 @@
     
         [self.projectionView setRotation:self.rotationSlider.value];
         [self.projectionView setDistance:self.distanceSlider.value];
-        [self.projectionView renderFrameWithInterval:timeDiff];
+        [self.projectionView renderFrameWithInterval:timeDiff * 4.f];
     }
         
     else if(_i == 1) {
@@ -87,21 +105,21 @@
         
         [self.rightView setRotation:self.rotationSlider.value];
         [self.rightView setDistance:self.distanceSlider.value];
-        [self.rightView renderFrameWithInterval:timeDiff];
+        [self.rightView renderFrameWithInterval:timeDiff * 4.f];
     }
     
     else if(_i == 2) {
         
         [self.bottomView setRotation:self.rotationSlider.value];
         [self.bottomView setDistance:self.distanceSlider.value];
-        [self.bottomView renderFrameWithInterval:timeDiff];
+        [self.bottomView renderFrameWithInterval:timeDiff * 4.f];
     }
     
     else if(_i == 3) {
         
         [self.leftView setRotation:self.rotationSlider.value];
         [self.leftView setDistance:self.distanceSlider.value];
-        [self.leftView renderFrameWithInterval:timeDiff];
+        [self.leftView renderFrameWithInterval:timeDiff * 4.f];
     }
     
     _i = (_i + 1) % 4;
@@ -138,10 +156,11 @@
     [_displayLink setPaused:YES];
     [_displayLink invalidate];
     [_displayLink release], _displayLink = nil;
-    [_projectionView release];
-    [_rightView release];
-    [_bottomView release];
-    [_leftView release];
+    
+    [_projectionView release], _projectionView = nil;
+    [_rightView release], _rightView = nil;
+    [_bottomView release], _bottomView = nil;
+    [_leftView release], _leftView = nil;
     
     [_file release], _file = nil;
     [_rotationSlider release];

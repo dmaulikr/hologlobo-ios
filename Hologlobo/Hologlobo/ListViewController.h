@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ListViewController.h
 //  Hologlobo
 //
 //  Created by Fabio Dela Antonio on 9/5/15.
@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
-+ (instancetype)viewControllerWithFile:(NSString *)file;
+@interface ListViewController : UIViewController
 
 @end
-

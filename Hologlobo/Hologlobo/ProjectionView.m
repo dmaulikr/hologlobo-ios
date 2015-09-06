@@ -15,23 +15,18 @@
     CGFloat _distance;
 }
 
-- (void)prepareForRendering {
+- (void)prepareForRenderingWithFile:(NSString *)file rotation:(CGFloat)degrees {
     
     [super prepareForRendering];
     
-    _distance = 5.f;
+    _distance = 10.f;
+    _degrees = degrees;
     
     mglMatrixMode(_mathContext, GL_PROJECTION);
     mglLoadIdentity(_mathContext);
     mgluPerspective(_mathContext, FOV, self.frame.size.width/self.frame.size.height, .1f, 9999.0f);
     
-    _model = [[GLWavefrontModel alloc] initWithContentsOfFile:@"eu2.obj"];
-}
-
-- (void)prepareForRenderingWithRotation:(CGFloat)degrees {
-    
-    [self prepareForRendering];
-    _degrees = degrees;
+    _model = [[GLWavefrontModel alloc] initWithContentsOfFile:file];
 }
 
 - (void)setDistance:(CGFloat)distance {

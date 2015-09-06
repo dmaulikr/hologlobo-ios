@@ -19,23 +19,31 @@
 @property (retain, nonatomic) IBOutlet ProjectionView * leftView;
 
 @property (retain, nonatomic) CADisplayLink * displayLink;
+
+@property (nonatomic, retain) NSString * file;
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
++ (instancetype)viewControllerWithFile:(NSString *)file {
     
-    [super viewDidLoad];
-    
-    _displayLink = [[CADisplayLink displayLinkWithTarget:self selector:@selector(gameLoop:)] retain];
-    _displayLink.frameInterval = 1; /* ~ 60 fps */
-    
-    [_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    ViewController * vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ViewController"];
+    [vc setFile:file];
+    return vc;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
+    
+    if(!_displayLink) {
+        
+        _displayLink = [[CADisplayLink displayLinkWithTarget:self selector:@selector(gameLoop:)] retain];
+        _displayLink.frameInterval = 1; /* ~ 60 fps */
+        
+        [_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    }
+    
     [self prepareForRendering];
 }
 
@@ -50,10 +58,10 @@
 
 - (void)prepareForRendering {
     
-    [self.projectionView prepareForRenderingWithRotation:0.f];
-    [self.leftView prepareForRenderingWithRotation:90.f];
-    [self.bottomView prepareForRenderingWithRotation:180.f];
-    [self.rightView prepareForRenderingWithRotation:270.f];
+    [self.projectionView prepareForRenderingWithFile:self.file rotation:0.f];
+    [self.leftView prepareForRenderingWithFile:self.file rotation:90.f];
+    [self.bottomView prepareForRenderingWithFile:self.file rotation:180.f];
+    [self.rightView prepareForRenderingWithFile:self.file rotation:270.f];
 }
 
 - (void)gameLoop:(CADisplayLink *)link {
@@ -84,6 +92,8 @@
     [_rightView release];
     [_bottomView release];
     [_leftView release];
+    
+    [_file release], _file = nil;
     [super dealloc];
 }
 

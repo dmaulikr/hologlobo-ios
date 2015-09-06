@@ -10,6 +10,6 @@
 
 @interface ProjectionView : OpenGLView
 
-- (void)prepareForRenderingWithRotation:(CGFloat)degrees;
+- (void)prepareForRenderingWithFile:(NSString *)file rotation:(CGFloat)degrees;
 
 @end

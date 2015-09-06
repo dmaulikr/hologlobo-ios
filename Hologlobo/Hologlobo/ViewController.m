@@ -13,6 +13,8 @@
     unsigned _i;
 }
 
+@property (retain, nonatomic) IBOutlet UIView * motherView;
+
 @property (retain, nonatomic) IBOutlet ProjectionView * projectionView;
 @property (retain, nonatomic) IBOutlet ProjectionView * rightView;
 @property (retain, nonatomic) IBOutlet ProjectionView * bottomView;
@@ -30,6 +32,7 @@
 @property (retain, nonatomic) IBOutlet UIView * expandView;
 
 @property (nonatomic, assign, getter=isExpanded) BOOL expanded;
+@property (retain, nonatomic) IBOutlet UIButton * expandButton;
 
 @end
 
@@ -40,6 +43,24 @@
     ViewController * vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ViewController"];
     [vc setFile:file];
     return vc;
+}
+
+- (void)viewDidLoad {
+    
+    [super viewDidLoad];
+    
+    CGRect frame = [[UIScreen mainScreen] bounds];
+    
+    CGFloat size = (frame.size.width < frame.size.height ? frame.size.width:frame.size.height) - 20.f;
+    
+    [self.motherView setFrame:CGRectMake(10.f, self.view.frame.size.height/2.f - size/2.f, size, size)];
+    
+    CGFloat viewSize = size/2.f - 50.f;
+    
+    [self.projectionView setFrame:CGRectMake(size/2.f - viewSize/2.f, 0, viewSize, viewSize)];
+    [self.rightView setFrame:CGRectMake(size/2.f + 50.f, size/2.f - viewSize/2.f, viewSize, viewSize)];
+    [self.bottomView setFrame:CGRectMake(size/2.f - viewSize/2.f, size/2.f + 50.f, viewSize, viewSize)];
+    [self.leftView setFrame:CGRectMake(0, size/2.f - viewSize/2.f, viewSize, viewSize)];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -133,6 +154,7 @@
             self.expandView.frame = self.contractedReferenceView.frame;
         } completion:^(BOOL finished) {
             _expanded = NO;
+            [self.expandButton setTitle:@"+" forState:UIControlStateNormal];
         }];
     }
     
@@ -142,6 +164,7 @@
             self.expandView.frame = self.referenceView.frame;
         } completion:^(BOOL finished) {
             _expanded = YES;
+            [self.expandButton setTitle:@"-" forState:UIControlStateNormal];
         }];
     }
 }
@@ -168,6 +191,8 @@
     [_referenceView release];
     [_expandView release];
     [_contractedReferenceView release];
+    [_motherView release];
+    [_expandButton release];
     [super dealloc];
 }
 

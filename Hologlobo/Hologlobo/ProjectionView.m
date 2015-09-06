@@ -12,6 +12,7 @@
     GLVertexBufferObject * _obj;
     GLWavefrontModel * _model, * _leftDoor, * _rightDoor;
     CGFloat _degrees;
+    CGFloat _rotation;
     CGFloat _distance;
 }
 
@@ -42,7 +43,18 @@
     }
 }
 
-- (void)renderFrameWithInterval:(double)interval {
+- (void)setRotation:(CGFloat)degrees {
+    
+    while(degrees < 0.f)
+        degrees += 360.f;
+    
+    while(degrees > 360.f)
+        degrees -= 360.f;
+    
+    _rotation = degrees;
+}
+
+- (void)renderFrameWithInterval:(double)interval  {
     
     [super renderFrameWithInterval:interval];
     
@@ -61,7 +73,7 @@
     mglRotatef(_mathContext, _degrees, 0.f, 0.f, 1.f);
     
     mglTranslatef(_mathContext, 0.f, 0.f, -_distance);
-    mglRotatef(_mathContext, _degrees, 0.f, 1.f, 0.f);
+    mglRotatef(_mathContext, _degrees + _rotation, 0.f, 1.f, 0.f);
     
     mglScalef(_mathContext, 10.f/_model.magnitude, 10.f/_model.magnitude, 10.f/_model.magnitude);
     mglTranslatef(_mathContext, -(_model.centroid.v[0]), -(_model.centroid.v[1]), -(_model.centroid.v[2]));

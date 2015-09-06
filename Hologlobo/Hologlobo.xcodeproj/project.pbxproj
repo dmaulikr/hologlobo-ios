@@ -11,7 +11,6 @@
 		EF29EA431B9B45B100F855AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF29EA421B9B45B100F855AD /* AppDelegate.m */; };
 		EF29EA461B9B45B100F855AD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF29EA451B9B45B100F855AD /* ViewController.m */; };
 		EF29EA491B9B45B100F855AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF29EA471B9B45B100F855AD /* Main.storyboard */; };
-		EF29EA4B1B9B45B100F855AD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF29EA4A1B9B45B100F855AD /* Images.xcassets */; };
 		EF29EA4E1B9B45B100F855AD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF29EA4C1B9B45B100F855AD /* LaunchScreen.xib */; };
 		EF29EA5A1B9B45B200F855AD /* HologloboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF29EA591B9B45B200F855AD /* HologloboTests.m */; };
 		EFB985FE1B9B61420077E812 /* fopen+Bundle.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB985E11B9B61420077E812 /* fopen+Bundle.m */; };
@@ -65,6 +64,7 @@
 		EFB986BB1B9B91AB0077E812 /* Vectors.c in Sources */ = {isa = PBXBuildFile; fileRef = EFB985F81B9B61420077E812 /* Vectors.c */; };
 		EFB986CD1B9BAE380077E812 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB986CC1B9BAE380077E812 /* ListViewController.m */; };
 		EFB986D51B9BC0720077E812 /* ListCard.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB986D41B9BC0720077E812 /* ListCard.m */; };
+		EFB986D71B9C03150077E812 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFB986D61B9C03150077E812 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,7 +86,6 @@
 		EF29EA441B9B45B100F855AD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		EF29EA451B9B45B100F855AD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		EF29EA481B9B45B100F855AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EF29EA4A1B9B45B100F855AD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EF29EA4D1B9B45B100F855AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EF29EA531B9B45B200F855AD /* HologloboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HologloboTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF29EA581B9B45B200F855AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -188,6 +187,7 @@
 		EFB986CC1B9BAE380077E812 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		EFB986D31B9BC0720077E812 /* ListCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListCard.h; sourceTree = "<group>"; };
 		EFB986D41B9BC0720077E812 /* ListCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListCard.m; sourceTree = "<group>"; };
+		EFB986D61B9C03150077E812 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,7 +236,7 @@
 				EF29EA421B9B45B100F855AD /* AppDelegate.m */,
 				EFB986CA1B9BACBB0077E812 /* View Controllers */,
 				EF29EA471B9B45B100F855AD /* Main.storyboard */,
-				EF29EA4A1B9B45B100F855AD /* Images.xcassets */,
+				EFB986D61B9C03150077E812 /* Images.xcassets */,
 				EF29EA4C1B9B45B100F855AD /* LaunchScreen.xib */,
 				EF29EA3D1B9B45B100F855AD /* Supporting Files */,
 			);
@@ -614,8 +614,8 @@
 				EFB986B21B9B8FB50077E812 /* BNEmptySpaceCell.xib in Resources */,
 				EFB986B41B9B8FB50077E812 /* BNImageCell.xib in Resources */,
 				EF29EA4E1B9B45B100F855AD /* LaunchScreen.xib in Resources */,
+				EFB986D71B9C03150077E812 /* Images.xcassets in Resources */,
 				EFB986B81B9B8FB50077E812 /* BNStaticImageCell.xib in Resources */,
-				EF29EA4B1B9B45B100F855AD /* Images.xcassets in Resources */,
 				EFB986B01B9B8FB50077E812 /* BNEmptyCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

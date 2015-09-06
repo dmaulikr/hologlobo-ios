@@ -45,6 +45,10 @@
     return vc;
 }
 
+- (BOOL)prefersStatusBarHidden{
+    return YES;
+}
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];

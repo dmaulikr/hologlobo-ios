@@ -12,7 +12,7 @@
 #import "GLWavefrontModel.h"
 #include "glMath.h"
 
-#define FOV 60.f
+#define FOV 90.f
 
 @interface OpenGLView : RenderingView {
     @protected

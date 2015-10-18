@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "ProjectionView.h"
 
+//#import "fopen+Bundle.h"
+
 @interface ViewController () {
     unsigned _i;
 }
@@ -50,6 +52,11 @@
 }
 
 - (void)viewDidLoad {
+    
+//#warning MOCK
+//    setDocumentsDirectory(@"55ec7ba5c3be523b001fda8e");
+//    self.file = @"model.obj";
+//#warning FIM DO MOCK
     
     [super viewDidLoad];
     
